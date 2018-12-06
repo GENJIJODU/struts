@@ -25,6 +25,13 @@
     <name>OpenEJB :: Web Examples :: Struts</name>
     <url>http://tomee.apache.org</url>
 
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.5.7.RELEASE</version>
+    </parent>
+
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
@@ -42,9 +49,36 @@
 
     <build>
         <finalName>struts</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>2.1.1.RELEASE</version>
+            </plugin>
+        </plugins>
     </build>
 
     <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-jasper</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.apache.tomee</groupId>
             <artifactId>javaee-api</artifactId>
@@ -68,6 +102,11 @@
             <version>5.1.13</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.apache.struts</groupId>
+            <artifactId>struts2-spring-plugin</artifactId>
+            <version>2.1.8.1</version>
+        </dependency>
         <dependency>
             <groupId>org.apache.struts</groupId>
             <artifactId>struts2-core</artifactId>
